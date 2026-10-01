@@ -4,36 +4,48 @@ import java.util.List;
 public class ProductService {
 
     private final List<Product> products = new ArrayList<>();
-    private static long nextId = 1;
-   
-   
-   
-   
-   
-   
-    /* 
-    public void addProduct(Product product) {
-        if (product.getId() == 0) {
-            product.setId(nextId++);
-        }
-        products.add(product);
+    private static long countId = 1;
+
+    public Product saveProduct(Product p) {
+
+        // faltan validaciones
+
+        p.setId(countId);
+        countId += 1;
+
+        products.add(p);
+
+        return p;
     }
 
-    public Product getProductById(long id) {
-        for (Product product : products) {
-            if (product.getId() == id) {
-                return product;
-            }
-        }
-        return null;
-    }
-
-    public boolean deleteProductById(long id) {
-        return products.removeIf(product -> product.getId() == id);
-    }
-
-    public List<Product> getProducts() {
+    public List<Product> listAll() {
         return products;
     }
-    */
+
+    public Product getProductById(int id) {
+
+        return products.stream()
+                .filter(p -> p.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("producto no encontrado"));
+    }
+
+    public Product updateProduct(int id, Product p) {
+        
+        //faltan validaciones
+        
+        Product product = getProductById(id);
+
+        product.setName(p.getName());
+        product.setPrice(p.getPrice());
+        product.setStock(p.getStock());
+
+        return p;
+    }
+
+    public void deleteProduct(int id) {
+
+        Product p = getProductById(id);
+        products.remove(p);
+    }
 }
