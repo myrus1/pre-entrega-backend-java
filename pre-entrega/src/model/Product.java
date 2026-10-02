@@ -1,3 +1,4 @@
+package model;
 
 public class Product {
 
@@ -5,6 +6,15 @@ public class Product {
     private String name;
     private double price;
     private int stock;
+    private String category;
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public long getId() {
         return id;
