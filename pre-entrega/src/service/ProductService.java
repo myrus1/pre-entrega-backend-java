@@ -1,7 +1,11 @@
 package service;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import model.Product;
+
+import util.Validator;
 
 public class ProductService {
 
@@ -11,6 +15,10 @@ public class ProductService {
     public Product saveProduct(Product p) {
 
         // faltan validaciones
+        Validator.nameValidate(p.getName());
+        Validator.priceValidate(p.getPrice());
+        Validator.stockValidate(p.getStock());
+        Validator.categoryValidator(p.getCategory());
 
         p.setId(countId);
         countId += 1;
@@ -38,10 +46,11 @@ public class ProductService {
         
         Product product = getProductById(id);
 
-        product.setName(p.getName());
-        product.setPrice(p.getPrice());
-        product.setStock(p.getStock());
-
+        Validator.nameValidate(p.getName());
+        Validator.priceValidate(p.getPrice());
+        Validator.stockValidate(p.getStock());
+        Validator.categoryValidator(p.getCategory());
+   
         return p;
     }
 
