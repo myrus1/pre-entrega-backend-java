@@ -1,10 +1,20 @@
 package ui;
 
+import java.util.Arrays;
 import java.util.Scanner;
-import util.Validator;
+
+import service.ProductService;
 
 public class Menu {
 
+    private final Scanner sc;
+    private final ProductService service;
+    
+    public Menu(Scanner sc, ProductService service){
+        this.sc=sc;
+        this.service=service;
+    }
+    
     public static void printMenu() {
         System.out.println("0 Salir");
         System.out.println("1 Listar productos");
@@ -23,7 +33,7 @@ public class Menu {
         
         switch (option) {
             case 1:
-
+                Arrays.stream(ProductService.listAll()).forEach(System.out::println);
                 break;
 
             case 2:
