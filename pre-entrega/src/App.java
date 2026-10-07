@@ -8,7 +8,8 @@ public class App {
         
         ProductService productService = new ProductService();
         Scanner sc = new Scanner(System.in);
-        Menu.printMenu();
+        Menu menu = new Menu(sc, productService);
+        menu.runMenu();
 
     }
 }

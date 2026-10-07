@@ -1,4 +1,6 @@
 package util;
+ 
+import java.util.Scanner;
 
 public class Validator {
     
@@ -28,9 +30,36 @@ public class Validator {
 
     }
 
-    //public static int readInt(int value){   }
+    public static int readInt(Scanner sc, String message) {
+        while (true) {
+            System.out.print(message);
+            try {
+                return Integer.parseInt(sc.nextLine().trim());
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Ingrese un número entero válido.");
+            }
+        }
+    }
 
-    //public static int readDouble(int value){   }
+    public static double readDouble(Scanner sc, String message) {
+        while (true) {
+            System.out.print(message);
+            try {
+                return Double.parseDouble(sc.nextLine().trim());
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Ingrese un número decimal válido.");
+            }
+        }
+    }
 
-    //public static int readString(int value){   }
+    public static String readString(Scanner sc, String message) {
+        while (true) {
+            System.out.print(message);
+            String input = sc.nextLine().trim();
+            if (!input.isEmpty()) {
+                return input;
+            }
+            System.out.println("Error: El texto no puede estar vacío.");
+        }
+    }
 }
