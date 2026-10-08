@@ -1,34 +1,34 @@
 # 📋 Checklist de Pre-Entrega - Java Back-End (Talento Tech)
 
 ## ⚙️ Funcionamiento
-- [ ] El proyecto compila y se ejecuta sin errores
-- [ ] El menú se repite hasta que se elige la opción de salir
+- [x] El proyecto compila y se ejecuta sin errores
+- [x] El menú se repite hasta que se elige la opción de salir
 - [ ] Todas las opciones del menú funcionan
 
 ## 🔄 CRUD de Productos
-- [ ] **Crear:** se agrega un producto con ID único
-- [ ] **Listar:** se muestran todos los productos
-- [ ] **Buscar:** se encuentra un producto por ID
-- [ ] **Actualizar:** se modifican los datos de un producto existente
-- [ ] **Eliminar:** se borra un producto existente
+- [x] **Crear:** se agrega un producto con ID único
+- [x] **Listar:** se muestran todos los productos
+- [x] **Buscar:** se encuentra un producto por ID
+- [x] **Actualizar:** se modifican los datos de un producto existente
+- [x] **Eliminar:** se borra un producto existente
 
 ## 🛡️ Validación de Datos
-- [ ] No se aceptan nombres vacíos
-- [ ] No se aceptan precios o stock negativos
-- [ ] Se controla el ingreso de texto donde se espera un número
+- [x] No se aceptan nombres vacíos
+- [x] No se aceptan precios o stock negativos
+- [x] Se controla el ingreso de texto donde se espera un número
 
 ## ☕ Colecciones y POO
-- [ ] Los productos se guardan en una colección
-- [ ] Los atributos son privados, con getters y setters
-- [ ] La clase Producto tiene constructor
+- [x] Los productos se guardan en una colección
+- [x] Los atributos son privados, con getters y setters
+- [x] La clase Producto tiene constructor
 
 ## ⚠️ Manejo de Excepciones
-- [ ] El programa no se cierra ante un dato incorrecto
-- [ ] Se usa `try-catch` donde corresponde
-- [ ] Al buscar, actualizar o eliminar un ID inexistente se muestra un mensaje claro
+- [x] El programa no se cierra ante un dato incorrecto
+- [x] Se usa `try-catch` donde corresponde
+- [x] Al buscar, actualizar o eliminar un ID inexistente se muestra un mensaje claro
 
 ## 📂 Organización
-- [ ] El código está separado en clases con responsabilidades claras
-- [ ] Los nombres de clases, métodos y variables son descriptivos
-- [ ] No quedan código comentado ni pruebas sueltas
-- [ ] El proyecto está subido a GitHub con commits que muestran el avance
+- [x] El código está separado en clases con responsabilidades claras
+- [x] Los nombres de clases, métodos y variables son descriptivos
+- [] No quedan código comentado ni pruebas sueltas
+- [x] El proyecto está subido a GitHub con commits que muestran el avance
