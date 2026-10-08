@@ -36,7 +36,7 @@ public class Menu {
                 switch (opcion) {
                     case 0 -> System.out.println("¡Hasta luego!");
                     case 1 -> addProduct();
-                    case 2 -> System.out.println("falta");//listProduct();
+                    case 2 -> listProduct();
                     case 3 -> System.out.println("falta");//findProduct();
                     case 4 -> System.out.println("falta");//updateProduct();
                     case 5 -> System.out.println("falta");//deleteProduct();
@@ -63,4 +63,11 @@ public class Menu {
         
     }
 
+    public void listProduct(){
+        service.listAll().forEach(System.out::println);
+    }
+
+    public Product findProduct(int ID){
+        return service.getProductById(ID);      
+    }
 }

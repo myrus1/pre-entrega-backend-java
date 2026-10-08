@@ -17,6 +17,15 @@ public class Product {
         this.category = category;
     }
 
+    @Override
+    public String toString() {
+    return "Producto id: " + id + 
+           ", nombre: " + name + 
+           ", precio: $" + price + 
+           ", stock: " + stock + 
+           ", categoría: " + category;
+    }
+
     public String getCategory() {
         return category;
     }
@@ -57,3 +66,4 @@ public class Product {
         this.stock = stock;
     }
 }
+
