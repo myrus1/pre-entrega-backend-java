@@ -37,9 +37,9 @@ public class Menu {
                     case 0 -> System.out.println("¡Hasta luego!");
                     case 1 -> addProduct();
                     case 2 -> listProduct();
-                    case 3 -> System.out.println("falta");//findProduct();
-                    case 4 -> System.out.println("falta");//updateProduct();
-                    case 5 -> System.out.println("falta");//deleteProduct();
+                    case 3 -> findProduct();
+                    case 4 -> updateProduct();
+                    case 5 -> deleteProduct();
                     default -> System.out.println("Opción inválida (0-5).");
                 }
                 // catch (ProductNotFoundException | InsufficientStockException | IllegalArgumentException e) {
@@ -67,7 +67,39 @@ public class Menu {
         service.listAll().forEach(System.out::println);
     }
 
-    public Product findProduct(int ID){
-        return service.getProductById(ID);      
+    public void findProduct(){
+        int id= Validator.readInt(sc, "Ingrese ID: ");
+        try{
+        System.out.print(service.getProductById(id));
+        }catch (Exception e){
+            System.err.println("Producto no encotrado");
+
+        }
+    }
+
+    public void updateProduct(){
+        int id = Validator.readInt(sc, "Ingrese ID del producto a actualizar: ");
+        try {
+            Product actualProduct = service.getProductById(id);
+            System.out.println("Producto a modificar :\n" + actualProduct + "\n");
+        } catch (Exception e) {
+            System.out.println("No existe el producto con id: "+ id);
+        }
+        Product newProduct = new Product(
+            Validator.readString(sc, "Nombre: "),
+            Validator.readDouble(sc,"Precio: "),
+            Validator.readInt(sc, "Stock :"),
+            Validator.readString(sc, "Cateoría: ")
+        ); 
+
+        service.updateProduct(id, newProduct);
+    }
+
+    public void deleteProduct(){
+        try {
+            service.deleteProduct(Validator.readInt(sc,"Ingrese ID: "));
+        } catch (Exception e) {
+            System.err.println("Producto no encontrado");
+        }
     }
 }

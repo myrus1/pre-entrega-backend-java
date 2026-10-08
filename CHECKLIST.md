@@ -3,7 +3,7 @@
 ## ⚙️ Funcionamiento
 - [x] El proyecto compila y se ejecuta sin errores
 - [x] El menú se repite hasta que se elige la opción de salir
-- [ ] Todas las opciones del menú funcionan
+- [x] Todas las opciones del menú funcionan
 
 ## 🔄 CRUD de Productos
 - [x] **Crear:** se agrega un producto con ID único
@@ -30,5 +30,5 @@
 ## 📂 Organización
 - [x] El código está separado en clases con responsabilidades claras
 - [x] Los nombres de clases, métodos y variables son descriptivos
-- [] No quedan código comentado ni pruebas sueltas
+- [x] No quedan código comentado ni pruebas sueltas
 - [x] El proyecto está subido a GitHub con commits que muestran el avance

@@ -40,18 +40,23 @@ public class ProductService {
                 .orElseThrow(() -> new RuntimeException("producto no encontrado"));
     }
 
-    public Product updateProduct(int id, Product p) {
+    public Product updateProduct(int id, Product newProduct) {
         
         //faltan validaciones
         
-        Product product = getProductById(id);
+        Product oldProduct = getProductById(id);
 
-        Validator.nameValidate(p.getName());
-        Validator.priceValidate(p.getPrice());
-        Validator.stockValidate(p.getStock());
-        Validator.categoryValidator(p.getCategory());
-   
-        return p;
+        Validator.nameValidate(newProduct.getName());
+        Validator.priceValidate(newProduct.getPrice());
+        Validator.stockValidate(newProduct.getStock());
+        Validator.categoryValidator(newProduct.getCategory());
+        
+        oldProduct.setName(newProduct.getName());
+        oldProduct.setPrice(newProduct.getPrice());
+        oldProduct.setStock(newProduct.getStock());
+        oldProduct.setCategory(newProduct.getCategory());
+        
+        return oldProduct;
     }
 
     public void deleteProduct(int id) {

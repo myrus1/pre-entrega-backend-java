@@ -19,11 +19,11 @@ public class Product {
 
     @Override
     public String toString() {
-    return "Producto id: " + id + 
-           ", nombre: " + name + 
-           ", precio: $" + price + 
-           ", stock: " + stock + 
-           ", categoría: " + category;
+    return "Id: " + id + 
+           " | Nombre: " + name + 
+           " | Precio: $" + price + 
+           " | Stock: " + stock + 
+           " | Categoría: " + category;
     }
 
     public String getCategory() {
